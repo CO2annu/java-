@@ -1,0 +1,29 @@
+public class Count
+{
+	public static void main(String[] args)
+	{
+		printCount();
+		for (int i=0;i<10;i++)
+		{
+			CountTest c1=new CountTest();
+			printCount();
+		}
+	}
+	private static void printCount()
+	{
+		System.out.println("there are now" + CountTest.getInstanceCount()
+		+"insttances of the CountTest class");
+	}
+}
+class CountTest
+{
+	private  static int instanceCount=0;
+	public CountTest()
+	{
+		instanceCount++;
+	}
+	public static int getInstanceCount()
+	{
+		return instanceCount;
+	}
+}
